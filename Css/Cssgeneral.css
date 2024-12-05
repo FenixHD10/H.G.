@@ -158,59 +158,6 @@ p{
         margin-bottom: 20px;
     }
 }
-
-/* Estilos generales Terminan */
-
-/* Contenedor del carrusel */
-.carrusel {
-    position: relative;
-    width: 100%;
-    height: 620px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Contenedor de los slides */
-.carrusel-slides {
-    display: flex;
-    width: 100%; /* 5 imágenes */
-    transition: transform 1s ease-in-out;
-}
-
-/* Cada slide */
-.slide {
-    flex: 0 0 100%; /* Cada slide ocupa el 100% del carrusel */
-    position: relative;
-}
-
-/* Imágenes */
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 1s ease-in-out;
-}
-
-/* Efecto de oscurecimiento */
-.slide img:hover {
-    opacity: 0.8; /* Se oscurece al pasar el mouse */
-}
-
-.somos{
-    background-image: url("C:/Users/HP/Desktop/HG(Prog)/Fotos-prog/Equipo/fondo1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: flex;
-    text-align: justify;
-    padding: 60px;
-    width: 100%;
-    height: 400px;
-    color: white;
-    z-index: 100;
-}
-
-/* Contenedor de la tabla */
 .tabla {
     display: flex;
     gap: 10px; /* Espaciado entre columnas */
@@ -224,7 +171,7 @@ p{
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 500px;
+    width: 200px;
     padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -247,20 +194,145 @@ p{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
 }
 
-.sucursal{
-        width: 100%;
-        max-width: 1500px;
-        height: 500px;
-        background-color: #004ca3cf; /* Color de fondo */
-        border-radius: 15px; /* Bordes redondeados de 15px */
-        border: 2px solid #130091;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
-        margin: 20px auto; /* Centrado en la página */
-        display: flex;
-        justify-content: center; /* Centra el contenido horizontalmente */
-        align-items: center; /* Centra el contenido verticalmente */
-        color: white;
-        font-size: 20px;
-        text-align: center;
-        overflow: hidden;
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Menú lateral */
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+
+
+/* Contenido principal */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+    align-items: center;
+}
+
+/* Secciones */
+section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+section.active {
+    display: block;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+    align-items: center;
+    padding-left: 50px;
+    
+}
+
+/* Columna izquierda (imágenes) */
+.image-column {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeIn 1.5s ease;
+}
+
+.image.active {
+    display: block;
+}
+
+/* Columna derecha (información) */
+.info-column {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-column h1 {
+    margin: 0 0 10px;
+}
+
+.info-column p {
+    margin: 0 0 20px;
+    font-size: 1.1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.info-item i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #3498db;
+}
+
+/* Animación para las imágenes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
